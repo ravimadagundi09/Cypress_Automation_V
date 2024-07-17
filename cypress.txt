@@ -1,0 +1,123 @@
+bdd cucumber
+
+step1:npm init
+provide package details
+
+step2:npm install cypress --save-dev
+
+step3:npm i -D cypress cypress-cucumber-preprocessor
+
+step4:npm install --save-dev cypress-cucumber-preprocessor
+
+step5: need to add below lines in cypress.config.js under e2e
+
+const cucumber = require('cypress-cucumber-preprocessor').default
+
+setupNodeEvents(on, config){
+on('file:preprocessor',cucumber())
+},
+specPattern: "cypress/e2e/*.feature",
+
+step5: need to add package.js
+
+"cypress-cucumber-preprocessor":{
+"nonGlobalStepDefinitions":true,
+"step_definitions": "cypress/e2e/newtours"
+}
+
+step6: create cucumber file in applicationlogin.feature
+
+step7: create folder for step defination in e2e- applicationlogin
+
+file name should be same as feature file name
+
+
+import { Given, When } from "cypress-cucumber-preprocessor/steps";
+
+step8: run and check
+
+
+#cypress id
+
+projectId: "x4cccv"
+
+
+cypress_record key:74491ebf-5e87-4fc5-a31b-487863c2104c
+
+#run in power shell
+
+    npx cypress open
+
+#percy io run in power shell
+
+
+npx export PERCY_TOKEN= 
+
+npm run VisualStage
+
+$env:PERCY_TOKEN='web_202f4d5c10ea31cd53c40f13cce366da96f14973835cbe1ef7dbbb40610f9f72'
+
+PERCY_TOKEN=web_ca58780afeff8e9df4137bf571fe9ab5e0e10754f0cdc36644dd9ee382e03ec1
+
+    npx percy exec -- cypress run --spec cypress\integration\examples\BDD\FunctionalValidation\AccentBlade.feature
+
+
+
+npx percy exec -- cypress run --spec cypress\integration\examples\BDD\VisualAndUI\accentBlade.feature,cypress\integration\examples\BDD\VisualAndUI\gatedPDFAsset.feature
+
+npm run VisualStage -- cypress run --spec "cypress\integration\examples\BDD\VisualAndUI\accentBlade.feature,cypress\integration\examples\BDD\VisualAndUI\gatedPDFAsset.feature"
+
+ravim_NW5juv
+
+q1zXpYq9vXToULZ4c8MX
+
+
+
+Applitools visual testing:
+
+set APPLITOOLS_API_KEY='H2fSApOtLmbFOT6eDtf9RP0xYFPNjojuRI5icmWmrDg110'
+   
+
+
+
+#to record video in power shell
+ 
+    npx cypress run --record --key 74491ebf-5e87-4fc5-a31b-487863c2104c
+
+    npx cypress run --record --key 74491ebf-5e87-4fc5-a31b-487863c2104c --spec cypress\integration\examples\BDD\FunctionalValidation\GatedPDFPage.feature
+
+
+
+
+#to run tags
+
+  
+   npx cypress run --env tags="@Regression"
+
+ npx cypress ru --spec cypress\integration\examples\BDD\FunctionalValidation\*.feature -e TAGS='@Regression'
+
+npx cypress-tags run -e TAGS='@test'
+
+npx cypress-tags run -e TAGS='@test' --record --key 74491ebf-5e87-4fc5-a31b-487863c2104c
+
+
+https://wcm-stg.intel.com/content/www/us/en/test/apollo-qa/stage-checkout-13-5/gated-pdf-asset.html
+
+https://wcm-stg.intel.com/content/www/us/en/test/apollo-qa/component-library/intel-rwd-editorial-blade/item-list-blade-i1.html
+
+
+
+cypress chrome recorder
+
+
+it doesn't support actions like Drag and Drop
+
+there is no validations ,we have to custom those validation by exporting it
+
+
+allure report
+
+npx cypress run --env allure=true --spec cypress\integration\examples\BDD\FunctionalValidation\gatedPDFPage.feature
+
+npx allure generate
+
